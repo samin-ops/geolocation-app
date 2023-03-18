@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!--pour le bouton du Menu -->
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onReturnLocation()">
+        <ion-icon name="close-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      New Location
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onAddLocation(f.value)">
+    <ion-list>
+      <ion-item>
+        <ion-label>Title:</ion-label>
+        <ion-input type="text" name="title" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>City:</ion-label>
+        <ion-input type="text" name="city" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Country:</ion-label>
+        <ion-input type="text" name="country" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Keyword:</ion-label>
+        <ion-input type="text" name="keyword" ngModel></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit">Save</ion-button>
+  </form>
+</ion-content>

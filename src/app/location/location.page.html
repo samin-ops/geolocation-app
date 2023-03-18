@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!--pour le bouton du Menu -->
+    </ion-buttons>
+    <ion-buttons slot="end">
+    <ion-button (click)="onNewLocation()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="location-outline" color="danger"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="locations">
+    <ion-item *ngFor="let p of locations">
+      <ion-label (click)="onDetail(p)">{{p.title}}</ion-label>
+      <ion-icon name="close-outline" color="danger" slot="end" (click)="onRemoveLocation(p)"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
